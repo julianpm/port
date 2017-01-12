@@ -120,3 +120,27 @@ function pt_category_transient_flusher() {
 }
 add_action( 'edit_category', 'pt_category_transient_flusher' );
 add_action( 'save_post',     'pt_category_transient_flusher' );
+
+
+// PAGE HEADER
+function pt_page_header(){
+	if ( function_exists( 'get_field' ) ){
+		$primary_hero = get_field( 'pt_primary_hero_image', 'option' );
+		$second_hero = get_field( 'pt_second_hero_image', 'option' );
+		$third_hero = get_field( 'pt_third_hero_image', 'option' );
+
+		if ( $primary_hero ){ ?>
+
+			<header class="page-header">
+				<div class="page-header-left" style="background-image: url( <?php echo ( $primary_hero['url'] ); ?> ); ">
+				</div>
+				<div class="page-header-right">
+					<img src="<?php echo esc_url( $second_hero['url'] ); ?>" alt="<?php echo $second_hero['alt']; ?>">
+					<img src="<?php echo esc_url( $third_hero['url'] ); ?>" alt="<?php echo $third_hero['alt']; ?>">
+				</div>
+			</header>
+
+		<?php }
+
+	}
+}

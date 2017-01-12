@@ -1,13 +1,45 @@
 .page-header{
-	display: flex;
-	justify-content: space-between;
-	height:600px;
-	.page-header-left{
-		width: 60%;
-	}
-	.page-header-right{
-		width: 39%;
+	height:400px;
+	@include breakpoint(large){
+		height:600px;
 		display: flex;
-		flex-direction: column;
+		justify-content: space-between;
+	}
+	.page-header-large{
+		@include breakpoint(large){
+			width: 60%;
+		}
+		img{
+			@include breakpoint(large){
+				height:600px;
+			}
+		}
+	}
+	.page-header-small{
+		display: flex;
+		justify-content: space-between;
+		margin-top:8px;
+		@include breakpoint(large){
+			width: 39%;
+			display: block;
+			margin-top:0;
+		}
+		img{
+			width: 49%;
+			height:100%;
+			@include breakpoint(large){
+				height:294px;
+				object-position:0 100%;
+				width: 100%;
+				&:first-of-type{
+					margin-bottom:12px;
+				}
+			}
+		}
+	}
+	img{
+		@include breakpoint(large){
+			object-fit:cover;
+		}
 	}
 }

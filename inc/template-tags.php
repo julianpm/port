@@ -132,9 +132,10 @@ function pt_page_header(){
 		if ( $primary_hero ){ ?>
 
 			<header class="page-header">
-				<div class="page-header-left" style="background-image: url( <?php echo ( $primary_hero['url'] ); ?> ); ">
+				<div class="page-header-large">
+					<img src="<?php echo esc_url( $primary_hero['url'] ); ?>" alt="<?php echo $primary_hero['alt']; ?>">
 				</div>
-				<div class="page-header-right">
+				<div class="page-header-small">
 					<img src="<?php echo esc_url( $second_hero['url'] ); ?>" alt="<?php echo $second_hero['alt']; ?>">
 					<img src="<?php echo esc_url( $third_hero['url'] ); ?>" alt="<?php echo $third_hero['alt']; ?>">
 				</div>

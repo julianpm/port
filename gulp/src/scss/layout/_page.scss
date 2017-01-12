@@ -1,0 +1,13 @@
+.page-header{
+	display: flex;
+	justify-content: space-between;
+	height:600px;
+	.page-header-left{
+		width: 60%;
+	}
+	.page-header-right{
+		width: 39%;
+		display: flex;
+		flex-direction: column;
+	}
+}

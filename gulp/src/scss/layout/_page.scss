@@ -6,6 +6,7 @@
 		justify-content: space-between;
 	}
 	.page-header-large{
+		position:relative;
 		@include breakpoint(large){
 			width: 60%;
 		}
@@ -14,8 +15,23 @@
 				height:600px;
 			}
 		}
+		.overlay{
+			position:absolute;
+			text-align: center;
+			color:white;
+			top:0;
+			bottom:0;
+			left:0;
+			right:0;
+			background: rgba(0,0,0,0.4);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction:column;
+		}
 	}
 	.page-header-small{
+		position:relative;
 		display: flex;
 		justify-content: space-between;
 		margin-top:8px;

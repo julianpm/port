@@ -148,4 +148,5 @@ require get_template_directory() . '/inc/jetpack.php';
 // OPTIONS PAGE
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page('Theme Options');
+	acf_add_options_page('Page Header Options');
 }

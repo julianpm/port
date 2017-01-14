@@ -155,3 +155,36 @@ function pt_page_header(){
 
 	}
 }
+
+
+// SOCIAL MEDIA
+function pt_social_media(){
+	if ( function_exists( 'get_field' ) ){
+		$social_media = get_field( 'pt_social_media', 'option' );
+
+		if ( $social_media ){ ?>
+
+			<ul>
+			
+			<?php foreach( $social_media as $social_media_item ){
+				$social_media_icon = $social_media_item['pt_social_media_icon'];
+				$social_media_link = $social_media_item['pt_social_media_link'];
+	
+				if ( $social_media_link && $social_media_icon ){ ?>
+					
+					<li>
+						<a href="<?php echo esc_url( $social_media_link ); ?>">
+							<i class="fa fa-<?php echo esc_html( $social_media_icon ); ?>" aria-hidden="true"></i>
+						</a>
+					</li>
+				
+				<?php }
+
+			} ?>
+
+			</ul>
+		
+		<?php }
+
+	}
+}

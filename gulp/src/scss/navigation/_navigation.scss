@@ -7,20 +7,21 @@
 		align-items:center;
 		#primary-menu{
 			display: none;
+			margin:0;
+			padding:0;
+			list-style: none;
 			@include breakpoint(large){
 				display: block;
 			}
-			ul{
-				margin:0;
-				padding:0;
-				list-style: none;
-				li{
-					display: inline-block;
-					margin-left:20px;
-					a{
-						text-decoration: none;
-						color:black;
-					}
+			li{
+				display: inline-block;
+				margin-left:20px;
+				&:first-of-type{
+					margin-left:0;
+				}
+				a{
+					text-decoration: none;
+					color:black;
 				}
 			}
 		}

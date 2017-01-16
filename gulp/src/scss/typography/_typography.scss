@@ -3,14 +3,32 @@ body *{
 	font-weight:lighter;
 }
 h1{
-	@include font-size(72);
-}
-h3{
 	@include font-size(48);
+	margin:0;
+	@include breakpoint(large){
+		@include font-size(72);
+	}
+}
+h2{
+	@include font-size(28);
+	margin:0;
+	@include breakpoint(large){
+		@include font-size(48);
+	}
 }
 p{
 	@include font-size(16);
 	footer &{
 		@include font-size(14);
+	}
+}
+a{
+	color:black;
+	text-decoration: none;
+}
+.section-padding{
+	padding:5% 0;
+	@include breakpoint(large){
+		padding:2% 0;
 	}
 }

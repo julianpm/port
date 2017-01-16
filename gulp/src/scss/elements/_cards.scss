@@ -1,0 +1,13 @@
+.card{
+	text-align: center;
+	i{
+		margin-bottom:20px;
+		@include font-size(20);
+	}
+	p{
+		margin:0;
+		&:first-of-type{
+			margin-bottom:5px;
+		}
+	}
+}

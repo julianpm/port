@@ -136,14 +136,16 @@ function pt_page_header(){
 			<header class="page-header">
 				<div class="page-header-inner page-header-large">
 					<img src="<?php echo esc_url( $primary_hero['url'] ); ?>" alt="<?php echo $primary_hero['alt']; ?>">
-					<?php if ( $hero_title ){ ?>
 						<div class="overlay">
-							<h1><?php echo esc_html( $hero_title ); ?></h1>
-							<?php if ( $hero_subtitle ){ ?>
-								<h3><?php echo esc_html( $hero_subtitle ); ?></h3>
-							<?php } ?>
+							<div>
+								<?php if ( $hero_title ){ ?>
+									<h1><?php echo esc_html( $hero_title ); ?></h1>
+								<?php } ?>
+								<?php if ( $hero_subtitle ){ ?>
+									<h2><?php echo esc_html( $hero_subtitle ); ?></h2>
+								<?php } ?>
+							</div>
 						</div>
-					<?php } ?>
 				</div>
 				<div class="page-header-inner page-header-small">
 					<img src="<?php echo esc_url( $second_hero['url'] ); ?>" alt="<?php echo $second_hero['alt']; ?>">

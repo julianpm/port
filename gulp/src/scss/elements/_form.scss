@@ -1,10 +1,11 @@
 form{
+	margin-top:20px;
 	@include breakpoint(large){
 		display: flex;
 		flex-wrap:wrap;
 		justify-content: space-between;
 	}
-	div{
+	.form-fields{
 		@include breakpoint(large){
 			width: 49%;
 		}
@@ -17,10 +18,19 @@ form{
 			border-radius:0;
 			height: 200px;
 		}
+		&.submit{
+			width: 100%;
+		}
 	}
-	input[type="submit"]{
-		background: white;
-		border:2px solid black;
-		padding:10px 20px;
+	.submit{
+		margin:20px auto 0 auto;
+		input[type="submit"]{
+			background: white;
+			border:2px solid black;
+			padding:10px 30px;
+		}
+		.ajax-loader{
+			display: block;
+		}
 	}
 }

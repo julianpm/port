@@ -136,16 +136,22 @@ function pt_page_header(){
 			<header class="page-header">
 				<div class="page-header-inner page-header-large">
 					<img src="<?php echo esc_url( $primary_hero['url'] ); ?>" alt="<?php echo $primary_hero['alt']; ?>">
-						<div class="overlay">
-							<div>
-								<?php if ( $hero_title ){ ?>
+					<div class="overlay">
+						<div>
+							<?php if ( is_front_page() ){
+								if ( $hero_title ){ ?>
 									<h1><?php echo esc_html( $hero_title ); ?></h1>
-								<?php } ?>
-								<?php if ( $hero_subtitle ){ ?>
+								<?php }
+								if ( $hero_subtitle ){ ?>
 									<h2><?php echo esc_html( $hero_subtitle ); ?></h2>
-								<?php } ?>
-							</div>
+								<?php }
+							} elseif ( is_home() ){ ?>
+								<h1><?php single_post_title(); ?></h1>
+							<?php } else{ ?>
+								<h1><?php the_title(); ?></h1>
+							<?php } ?>
 						</div>
+					</div>
 				</div>
 				<div class="page-header-inner page-header-small">
 					<img src="<?php echo esc_url( $second_hero['url'] ); ?>" alt="<?php echo $second_hero['alt']; ?>">
@@ -189,4 +195,59 @@ function pt_social_media(){
 		<?php }
 
 	}
+}
+
+
+// CONTACT INFO
+function pt_contact_info(){
+	if ( function_exists( 'get_field' ) ){
+		$phone_icon = get_field( 'pt_phone_icon' );
+		$primary_phone = get_field( 'pt_primary_phone' );
+		$secondary_phone = get_field( 'pt_secondary_phone' );
+		$email_icon = get_field( 'pt_email_icon' );
+		$email = get_field( 'pt_email' );
+		$website = get_field( 'pt_website' );
+		$location_icon = get_field( 'pt_location_icon' );
+		$location = get_field( 'pt_location' ); ?>
+
+		<section class="row section-padding">
+			
+			<?php if ( $primary_phone || $secondary_phone ){ ?>
+
+				<div class="columns small-12 large-4 card item">
+					<?php if ( $phone_icon ){ ?>
+						<i class="fa fa-<?php echo esc_html( $phone_icon ); ?>" aria-hidden="true"></i>
+					<?php } ?>
+					<p><?php echo esc_html( $primary_phone ); ?></p>
+					<p><?php echo esc_html( $secondary_phone ); ?></p>
+				</div>
+
+			<?php }
+
+			if ( $email || $website ){ ?>
+
+				<div class="columns small-12 large-4 card item">
+					<?php if ( $email_icon ){ ?>
+						<i class="fa fa-<?php echo esc_html( $email_icon ); ?>" aria-hidden="true"></i>
+					<?php } ?>
+					<p><?php echo esc_html( $email ); ?></p>
+					<p><?php echo esc_html( $website ); ?></p>
+				</div>
+
+			<?php }
+
+			if ( $location ){ ?>
+
+				<div class="columns small-12 large-4 card item">
+					<?php if ( $location_icon ){ ?>
+						<i class="fa fa-<?php echo esc_html( $location_icon ); ?>" aria-hidden="true"></i>
+					<?php } ?>
+					<p><?php echo esc_html( $location ); ?></p>
+				</div>
+
+			<?php } ?>
+
+		</section>
+
+	<?php }
 }

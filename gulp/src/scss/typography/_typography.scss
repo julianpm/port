@@ -2,18 +2,26 @@ body *{
 	font-family:'Montserrat', sans-serif;
 	font-weight:lighter;
 }
+h1, h2, h3{
+	margin:0;
+}
 h1{
 	@include font-size(48);
-	margin:0;
+	letter-spacing:3px;
 	@include breakpoint(large){
 		@include font-size(72);
 	}
 }
 h2{
 	@include font-size(28);
-	margin:0;
 	@include breakpoint(large){
 		@include font-size(48);
+	}
+}
+h3{
+	@include font-size(22);
+	@include breakpoint(large){
+		@include font-size(30);
 	}
 }
 p{
@@ -30,5 +38,11 @@ a{
 	padding:5% 0;
 	@include breakpoint(large){
 		padding:2% 0;
+	}
+}
+.item{
+	margin-bottom:30px;
+	@include breakpoint(large){
+		margin-bottom:0;
 	}
 }

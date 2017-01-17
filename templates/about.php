@@ -15,7 +15,9 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 
-				
+				pt_page_header();
+
+				the_content();
 
 			endwhile; // End of the loop.
 			?>

@@ -44,6 +44,4 @@
 		</div>
 	</div>
 
-	<?php pt_page_header(); ?>
-
 	<div id="content" class="site-content">

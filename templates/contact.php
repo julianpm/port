@@ -13,7 +13,9 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php
-			while ( have_posts() ) : the_post(); ?>
+			while ( have_posts() ) : the_post();
+
+				pt_page_header(); ?>
 
 				<section class="section-padding">
 					<div class="row section-padding">

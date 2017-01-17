@@ -17,6 +17,8 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
+			<?php pt_page_header(); ?>
+
 			<section class="row section-padding">
 
 				<?php

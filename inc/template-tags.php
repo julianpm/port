@@ -126,8 +126,6 @@ add_action( 'save_post',     'pt_category_transient_flusher' );
 function pt_page_header(){
 	if ( function_exists( 'get_field' ) ){
 		$primary_hero = get_field( 'pt_primary_hero_image', 'option' );
-		$second_hero = get_field( 'pt_second_hero_image', 'option' );
-		$third_hero = get_field( 'pt_third_hero_image', 'option' );
 		$hero_title = get_field( 'pt_hero_title', 'option' );
 		$hero_subtitle = get_field( 'pt_hero_subtitle', 'option' );
 
@@ -154,6 +152,10 @@ function pt_page_header(){
 					</div>
 				</div>
 				<div class="page-header-inner page-header-small">
+					<?php
+					$second_hero = get_field( 'pt_second_hero_image' );
+					$third_hero = get_field( 'pt_third_hero_image' ); ?>
+					
 					<img src="<?php echo esc_url( $second_hero['url'] ); ?>" alt="<?php echo $second_hero['alt']; ?>">
 					<img src="<?php echo esc_url( $third_hero['url'] ); ?>" alt="<?php echo $third_hero['alt']; ?>">
 				</div>

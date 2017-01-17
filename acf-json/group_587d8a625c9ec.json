@@ -1,5 +1,5 @@
 {
-    "key": "group_587832b1384a3",
+    "key": "group_587d8a625c9ec",
     "title": "Page Header Options",
     "fields": [
         {
@@ -13,57 +13,9 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "key": "field_58776f0a550fb",
+            "key": "field_587d8a6fdffc6",
             "label": "Primary Hero Image",
             "name": "pt_primary_hero_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "key": "field_58777638529e8",
-            "label": "Second Hero Image",
-            "name": "pt_second_hero_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "key": "field_5877764b529e9",
-            "label": "Third Hero Image",
-            "name": "pt_third_hero_image",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -80,7 +32,7 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "key": "field_587832dca69db",
+            "key": "field_587d8a81dffc7",
             "label": "Hero Title",
             "name": "pt_hero_title",
             "type": "text",
@@ -99,7 +51,7 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "key": "field_587832f1a69dc",
+            "key": "field_587d8a87dffc8",
             "label": "Hero Subtitle",
             "name": "pt_hero_subtitle",
             "type": "text",
@@ -130,5 +82,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1484272429
+    "modified": 1484622478
 }

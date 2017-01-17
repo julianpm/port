@@ -1,6 +1,6 @@
 {
-    "key": "group_5876fdad9b097",
-    "title": "Theme Options",
+    "key": "group_587d8890268f4",
+    "title": "About Options",
     "fields": [
         {
             "return_format": "array",
@@ -13,55 +13,7 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "key": "field_5876fdbc393b6",
-            "label": "Logo",
-            "name": "pt_logo",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "key": "field_58776f0a550fb",
-            "label": "Primary Hero Image",
-            "name": "pt_primary_hero_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "key": "field_58777638529e8",
+            "key": "field_587d8897fd22d",
             "label": "Second Hero Image",
             "name": "pt_second_hero_image",
             "type": "image",
@@ -85,7 +37,7 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "key": "field_5877764b529e9",
+            "key": "field_587d889ffd22e",
             "label": "Third Hero Image",
             "name": "pt_third_hero_image",
             "type": "image",
@@ -102,9 +54,9 @@
     "location": [
         [
             {
-                "param": "options_page",
+                "param": "page_template",
                 "operator": "==",
-                "value": "acf-options-theme-options"
+                "value": "templates\/about.php"
             }
         ]
     ],
@@ -116,5 +68,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1484224098
+    "modified": 1484621992
 }

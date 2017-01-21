@@ -30,7 +30,7 @@
 			height:100%;
 			@include breakpoint(large){
 				height:244px;
-				object-position:0 100%;
+				object-position:0 80%;
 				width: 100%;
 				&:first-of-type{
 					margin-bottom:12px;

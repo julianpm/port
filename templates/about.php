@@ -19,6 +19,8 @@ get_header(); ?>
 
 				pt_about_me();
 
+				pt_my_services();
+
 			endwhile; // End of the loop.
 			?>
 

@@ -7,9 +7,6 @@
 		align-items:center;
 		#primary-menu{
 			display: none;
-			margin:0;
-			padding:0;
-			list-style: none;
 			@include breakpoint(large){
 				display: block;
 			}
@@ -21,10 +18,52 @@
 				}
 			}
 		}
-		i{
+		.flyout-toggle{
+			cursor:pointer;
 			@include font-size(30);
 			@include breakpoint(large){
 				display: none;
+			}
+		}
+	}
+}
+
+#primary-menu{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+
+.flyout{
+	text-align: right;
+	padding:20px;
+	background: black;
+	position: fixed;
+	width: 100%;
+	z-index:1;
+	height:190px;
+	top:-190px;
+	@include breakpoint(large){
+		display: none !important;
+	}
+	.flyout-toggle-close{
+		cursor:pointer;
+		i{
+			@include font-size(24);
+			color:white;
+			padding:5px;
+		}
+	}
+	#primary-menu{
+		margin-top:15px;
+		li{
+			margin-bottom:15px;
+			&:last-of-type{
+				margin-bottom: 0;
+			}
+			a{
+				color:white;
+				padding:5px;
 			}
 		}
 	}

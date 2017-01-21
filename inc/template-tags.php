@@ -151,14 +151,33 @@ function pt_page_header(){
 						</div>
 					</div>
 				</div>
-				<div class="page-header-inner page-header-small">
-					<?php
-					$second_hero = get_field( 'pt_second_hero_image' );
-					$third_hero = get_field( 'pt_third_hero_image' ); ?>
-					
-					<img src="<?php echo esc_url( $second_hero['url'] ); ?>" alt="<?php echo $second_hero['alt']; ?>">
-					<img src="<?php echo esc_url( $third_hero['url'] ); ?>" alt="<?php echo $third_hero['alt']; ?>">
-				</div>
+	
+				<?php 
+				$second_hero = get_field( 'pt_second_hero_image' );
+				$third_hero = get_field( 'pt_third_hero_image' );
+				$journal_second_hero = get_field( 'pt_journal_second_hero_image', 'option' );
+				$journal_third_hero = get_field( 'pt_journal_third_hero_image', 'option' );
+
+				if ( is_home() ){
+					if ( $journal_second_hero && $journal_third_hero ){ ?>
+						
+						<div class="page-header-inner page-header-small">
+							<img src="<?php echo esc_url( $journal_second_hero['url'] ); ?>" alt="<?php echo $journal_second_hero['alt']; ?>">
+							<img src="<?php echo esc_url( $journal_third_hero['url'] ); ?>" alt="<?php echo $journal_third_hero['alt']; ?>">
+						</div>
+
+					<?php }
+				} else{ 
+					if ( $second_hero && $third_hero ){ ?>
+
+						<div class="page-header-inner page-header-small">
+							<img src="<?php echo esc_url( $second_hero['url'] ); ?>" alt="<?php echo $second_hero['alt']; ?>">
+							<img src="<?php echo esc_url( $third_hero['url'] ); ?>" alt="<?php echo $third_hero['alt']; ?>">
+						</div>
+
+					<?php }
+				} ?>
+
 			</header>
 
 		<?php }

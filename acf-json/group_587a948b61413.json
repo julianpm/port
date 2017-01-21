@@ -8,25 +8,6 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "key": "field_587c38d2171a4",
-            "label": "Phone Icon",
-            "name": "pt_phone_icon",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "key": "field_587c38e9171a5",
             "label": "Primary Phone",
             "name": "pt_primary_phone",
@@ -65,25 +46,6 @@
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "key": "field_587c390c171a7",
-            "label": "Email Icon",
-            "name": "pt_email_icon",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
             "key": "field_587c391c171a8",
             "label": "Email",
             "name": "pt_email",
@@ -106,25 +68,6 @@
             "key": "field_587c3924171a9",
             "label": "Website",
             "name": "pt_website",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "key": "field_587c3933171aa",
-            "label": "Location Icon",
-            "name": "pt_location_icon",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -220,5 +163,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1484621754
+    "modified": 1485015109
 }

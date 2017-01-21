@@ -222,13 +222,16 @@ function pt_social_media(){
 // ABOUT PAGE ABOUT ME
 function pt_about_me(){
 	if ( function_exists( 'get_field' ) ){
-		$about_me_image = get_field( 'pt_about_me_image' );
 
 		if ( has_post_thumbnail() ){ ?>
 	
-			<section class="section-padding">
-				<?php the_post_thumbnail(); ?>
-				<?php the_content(); ?>
+			<section class="section-padding about-info">
+				<div class="about-info_image">
+					<?php the_post_thumbnail(); ?>
+				</div>
+				<div class="about-info_text">
+					<?php the_content(); ?>
+				</div>
 			</section>
 		
 		<?php }
@@ -236,16 +239,57 @@ function pt_about_me(){
 }
 
 
+// ABOUT PAGE MY SERVICES
+function pt_my_services(){
+	if ( function_exists( 'get_field' ) ){
+		$my_services_image = get_field( 'pt_my_services_image' );
+		$my_services_info = get_field( 'pt_my_services_info' );
+
+		if ( $my_services_image ){ ?>
+
+			<section class="section-padding about-info about-info_services">
+				<div class="about-info_text">
+					<h3 class="about-info_text__title"><?php echo esc_html_e( 'My Services', 'pt' ); ?></h3>
+					<?php if ( $my_services_info ){ ?>
+						
+						<div class="row about-info_services__inner">
+							
+							<?php foreach ( $my_services_info as $my_services_info_item ){
+								$my_services_info_icon = $my_services_info_item[ 'pt_my_services_info_icon' ];
+								$my_services_info_text = $my_services_info_item[ 'pt_my_services_info_text' ];
+
+								if ( $my_services_info_text ){ ?>
+
+									<div class="columns small-12 large-6 card card-services item">
+										<?php echo wp_kses_post( $my_services_info_text ); ?>
+									</div>
+
+								<?php }
+
+							} ?>
+
+						</div>
+
+					<?php } ?>
+				</div>
+				<div class="about-info_image">
+					<img src="<?php echo esc_url( $my_services_image['url'] ); ?>" alt="<?php echo $my_services_image['alt']; ?>">
+				</div>
+			</section>
+
+		<?php }
+
+	}
+}
+
+
 // CONTACT PAGE CONTACT INFO
 function pt_contact_info(){
 	if ( function_exists( 'get_field' ) ){
-		$phone_icon = get_field( 'pt_phone_icon' );
 		$primary_phone = get_field( 'pt_primary_phone' );
 		$secondary_phone = get_field( 'pt_secondary_phone' );
-		$email_icon = get_field( 'pt_email_icon' );
 		$email = get_field( 'pt_email' );
 		$website = get_field( 'pt_website' );
-		$location_icon = get_field( 'pt_location_icon' );
 		$location = get_field( 'pt_location' ); ?>
 
 		<section class="row section-padding">
@@ -253,9 +297,7 @@ function pt_contact_info(){
 			<?php if ( $primary_phone || $secondary_phone ){ ?>
 
 				<div class="columns small-12 large-4 card item">
-					<?php if ( $phone_icon ){ ?>
-						<i class="fa fa-<?php echo esc_html( $phone_icon ); ?>" aria-hidden="true"></i>
-					<?php } ?>
+					<i class="fa fa-phone" aria-hidden="true"></i>
 					<p><?php echo esc_html( $primary_phone ); ?></p>
 					<p><?php echo esc_html( $secondary_phone ); ?></p>
 				</div>
@@ -265,9 +307,7 @@ function pt_contact_info(){
 			if ( $email || $website ){ ?>
 
 				<div class="columns small-12 large-4 card item">
-					<?php if ( $email_icon ){ ?>
-						<i class="fa fa-<?php echo esc_html( $email_icon ); ?>" aria-hidden="true"></i>
-					<?php } ?>
+					<i class="fa fa-envelope-o" aria-hidden="true"></i>
 					<p><?php echo esc_html( $email ); ?></p>
 					<p><?php echo esc_html( $website ); ?></p>
 				</div>
@@ -277,9 +317,7 @@ function pt_contact_info(){
 			if ( $location ){ ?>
 
 				<div class="columns small-12 large-4 card item">
-					<?php if ( $location_icon ){ ?>
-						<i class="fa fa-<?php echo esc_html( $location_icon ); ?>" aria-hidden="true"></i>
-					<?php } ?>
+					<i class="fa fa-location-arrow" aria-hidden="true"></i>
 					<p><?php echo esc_html( $location ); ?></p>
 				</div>
 

@@ -1,5 +1,5 @@
 form{
-	margin-top:20px;
+	margin:20px 0 60px 0;
 	@include breakpoint(large){
 		display: flex;
 		flex-wrap:wrap;
@@ -23,14 +23,20 @@ form{
 		}
 	}
 	.submit{
-		margin:20px auto 0 auto;
+		margin:30px auto 0 auto;
+		text-align: center;
 		input[type="submit"]{
 			background: white;
 			border:2px solid black;
 			padding:10px 30px;
+			transition:0.5s;
+			&:hover{
+				background: black;
+				color:white;
+			}
 		}
 		.ajax-loader{
-			display: block;
+			display: none;
 		}
 	}
 }

@@ -15,13 +15,15 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 
-				pt_page_header();
+				pt_page_header(); ?>
 
-				pt_about_me();
+				<section class="section-padding">
+					<?php pt_about_me();
 
-				pt_my_services();
+					pt_my_services(); ?>
+				</section>
 
-			endwhile; // End of the loop.
+			<?php endwhile; // End of the loop.
 			?>
 
 		</main><!-- #main -->

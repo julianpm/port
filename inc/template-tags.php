@@ -219,7 +219,24 @@ function pt_social_media(){
 }
 
 
-// CONTACT INFO
+// ABOUT PAGE ABOUT ME
+function pt_about_me(){
+	if ( function_exists( 'get_field' ) ){
+		$about_me_image = get_field( 'pt_about_me_image' );
+
+		if ( has_post_thumbnail() ){ ?>
+	
+			<section class="section-padding">
+				<?php the_post_thumbnail(); ?>
+				<?php the_content(); ?>
+			</section>
+		
+		<?php }
+	}
+}
+
+
+// CONTACT PAGE CONTACT INFO
 function pt_contact_info(){
 	if ( function_exists( 'get_field' ) ){
 		$phone_icon = get_field( 'pt_phone_icon' );

@@ -17,7 +17,7 @@ get_header(); ?>
 
 				pt_page_header();
 
-				the_content();
+				pt_about_me();
 
 			endwhile; // End of the loop.
 			?>

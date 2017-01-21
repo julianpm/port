@@ -35,11 +35,8 @@ a{
 	text-decoration: none;
 }
 .section-padding{
-	padding:5% 0;
+	padding:50px 0;
 	@include breakpoint(large){
-		padding:2% 0;
+		padding:70px 0;
 	}
-}
-.item{
-	margin-bottom:30px;
 }

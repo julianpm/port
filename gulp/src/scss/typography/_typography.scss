@@ -42,7 +42,4 @@ a{
 }
 .item{
 	margin-bottom:30px;
-	@include breakpoint(large){
-		margin-bottom:0;
-	}
 }

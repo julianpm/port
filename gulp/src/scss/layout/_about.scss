@@ -1,10 +1,8 @@
 .about-info{
 	display: flex;
-	flex-direction: column-reverse;
+	flex-wrap:wrap;
 	@include breakpoint(large){
-		flex-direction: row;
 		align-items: center;
-		justify-content: space-between;
 	}
 	.about-info_image{
 		@include breakpoint(large){
@@ -12,6 +10,7 @@
 		}
 	}
 	.about-info_text{
+		margin-top:50px;
 		padding:0 20px;
 		@include breakpoint(large){
 			width: 40%;
@@ -23,12 +22,20 @@
 		}
 	}
 	&.about-info_services{
-		flex-direction: column;
+		flex-direction: column-reverse;
 		@include breakpoint(large){
 			flex-direction: row;
+			margin-top:50px;
 		}
 		.about-info_services__inner{
-			margin-top:30px;
+			display: flex;
+			flex-wrap:wrap;
+		}
+		.about-info_image{
+			margin-top:50px;
+			@include breakpoint(large){
+				margin-top:0;
+			}
 		}
 	}
 }

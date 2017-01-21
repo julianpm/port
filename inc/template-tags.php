@@ -225,7 +225,7 @@ function pt_about_me(){
 
 		if ( has_post_thumbnail() ){ ?>
 	
-			<section class="section-padding about-info">
+			<section class="about-info">
 				<div class="about-info_image">
 					<?php the_post_thumbnail(); ?>
 				</div>
@@ -247,7 +247,7 @@ function pt_my_services(){
 
 		if ( $my_services_image ){ ?>
 
-			<section class="section-padding about-info about-info_services">
+			<section class="about-info about-info_services">
 				<div class="about-info_text">
 					<h3 class="about-info_text__title"><?php echo esc_html_e( 'My Services', 'pt' ); ?></h3>
 					<?php if ( $my_services_info ){ ?>
@@ -260,7 +260,10 @@ function pt_my_services(){
 
 								if ( $my_services_info_text ){ ?>
 
-									<div class="columns small-12 large-6 card card-services item">
+									<div class="columns small-12 large-6 card card-services">
+										<?php if ( $my_services_info_icon ){ ?>
+											<i class="fa fa-<?php echo esc_html( $my_services_info_icon ); ?>" aria-hidden="true"></i>
+										<?php } ?>
 										<?php echo wp_kses_post( $my_services_info_text ); ?>
 									</div>
 
@@ -292,31 +295,33 @@ function pt_contact_info(){
 		$website = get_field( 'pt_website' );
 		$location = get_field( 'pt_location' ); ?>
 
-		<section class="row section-padding">
+		<section class="row">
 			
 			<?php if ( $primary_phone || $secondary_phone ){ ?>
 
-				<div class="columns small-12 large-4 card item">
+				<div class="columns small-12 large-4 card">
 					<i class="fa fa-phone" aria-hidden="true"></i>
-					<p><?php echo esc_html( $primary_phone ); ?></p>
-					<p><?php echo esc_html( $secondary_phone ); ?></p>
+					<a href="tel:012345678902"><?php echo esc_html( $primary_phone ); ?></a>
+					<a href="tel:012345678903"><?php echo esc_html( $secondary_phone ); ?></a>
 				</div>
 
 			<?php }
 
 			if ( $email || $website ){ ?>
 
-				<div class="columns small-12 large-4 card item">
+				<div class="columns small-12 large-4 card">
 					<i class="fa fa-envelope-o" aria-hidden="true"></i>
-					<p><?php echo esc_html( $email ); ?></p>
-					<p><?php echo esc_html( $website ); ?></p>
+					<a href="mailto:sendme@email.com"><?php echo esc_html( $email ); ?></a>
+					<a href="http://webaddress.com"><?php echo esc_html( $website ); ?></a>
+					<p></p>
+					<p></p>
 				</div>
 
 			<?php }
 
 			if ( $location ){ ?>
 
-				<div class="columns small-12 large-4 card item">
+				<div class="columns small-12 large-4 card">
 					<i class="fa fa-location-arrow" aria-hidden="true"></i>
 					<p><?php echo esc_html( $location ); ?></p>
 				</div>

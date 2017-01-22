@@ -11,7 +11,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php the_post_thumbnail(); ?>
+	<?php if ( has_post_thumbnail() ){ ?>
+		<a href="<?php echo esc_url( get_permalink() ); ?>">
+			<?php the_post_thumbnail();	?>
+		</a>
+	<?php } ?>
 
 	<header class="entry-header">
 	

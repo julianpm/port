@@ -19,24 +19,26 @@ get_header(); ?>
 
 			<?php pt_page_header(); ?>
 
-			<section class="row section-padding">
+			<section class="section-padding">
+				<div class="row" id="post-list">
 
-				<?php
-				/* Start the Loop */
-				while ( have_posts() ) : the_post(); ?>
+					<?php
+					/* Start the Loop */
+					while ( have_posts() ) : the_post(); ?>
 
-					<div class="columns small-12 large-4">
-					
-						<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-					
-					</div>
+						<div class="columns small-12 large-4 item">
+						
+							<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+						
+						</div>
 
-				<?php
-				endwhile; ?>
-			
+					<?php
+					endwhile; ?>
+
+				</div>
 			</section>
 
-			<?php the_posts_navigation(); ?>
+			<?php #the_posts_navigation(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

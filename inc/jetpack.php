@@ -16,7 +16,7 @@
 function pt_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
+		'container' => 'post-list',
 		'render'    => 'pt_infinite_scroll_render',
 		'footer'    => 'page',
 	) );
@@ -31,11 +31,25 @@ add_action( 'after_setup_theme', 'pt_jetpack_setup' );
  */
 function pt_infinite_scroll_render() {
 	while ( have_posts() ) {
-		the_post();
-		if ( is_search() ) :
-			get_template_part( 'template-parts/content', 'search' );
-		else :
-			get_template_part( 'template-parts/content', get_post_format() );
-		endif;
-	}
+		the_post(); ?>
+		
+		<div class="columns small-12 large-4">
+			<?php
+			if ( is_search() ){
+				get_template_part( 'template-parts/content', 'search' );
+			} else {
+				get_template_part( 'template-parts/content', get_post_format() );
+			} ?>
+		</div>
+
+	<?php }
 }
+
+/**
+ * Change Load More text
+ */
+function pt_infinite_scroll_js_settings( $settings ) {
+	$settings['text'] = esc_html__( 'View More', 'pt' );
+	return $settings;
+}
+add_filter( 'infinite_scroll_js_settings', 'pt_infinite_scroll_js_settings' );

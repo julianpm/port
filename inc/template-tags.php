@@ -122,6 +122,30 @@ add_action( 'edit_category', 'pt_category_transient_flusher' );
 add_action( 'save_post',     'pt_category_transient_flusher' );
 
 
+/**
+ * Display navigation to next/previous post when applicable.
+ *
+ */
+function pt_post_navigation() {
+	// Don't print empty markup if there's nowhere to navigate.
+	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+	$next     = get_adjacent_post( false, '', false );
+	if ( ! $next && ! $previous ) {
+		return;
+	}
+	?>
+	<nav class="navigation post-navigation" role="navigation">	
+		<div class="nav-links">
+			<?php
+				previous_post_link( '<div class="nav-previous">%link</div>', '<i class="fa fa-chevron-left" aria-hidden="true"></i>' );
+				next_post_link( '<div class="nav-next">%link</div>', '<i class="fa fa-chevron-right" aria-hidden="true"></i>' );
+			?>
+		</div><!-- .nav-links -->
+	</nav><!-- .navigation -->
+	<?php
+}
+
+
 // PAGE HEADER
 function pt_page_header(){
 	if ( function_exists( 'get_field' ) ){

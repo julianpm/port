@@ -22,9 +22,9 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 
-	<div class="row">
-		<div class="columns small-12">
-			<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="site-header" role="banner">
+		<div class="row">
+			<div class="columns small-12 site-header-inner">
 				
 				<?php $port_logo = get_field( 'pt_logo', 'option' );
 
@@ -42,9 +42,9 @@
 						<i class="fa fa-bars" aria-hidden="true"></i>
 					</button>
 				</nav><!-- #site-navigation -->
-			</header><!-- #masthead -->
+			</div>
 		</div>
-	</div>
+	</header><!-- #masthead -->
 	<div class="flyout">
 		<button class="flyout-toggle-close">
 			<i class="fa fa-times" aria-hidden="true"></i>

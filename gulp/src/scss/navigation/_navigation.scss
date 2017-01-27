@@ -1,28 +1,30 @@
 .site-header{
-	display: flex;
-	justify-content: space-between;
 	padding:25px 0;
-	.main-navigation{
+	.site-header-inner{
 		display: flex;
-		align-items:center;
-		#primary-menu{
-			display: none;
-			@include breakpoint(large){
-				display: block;
-			}
-			li{
-				display: inline-block;
-				margin-left:20px;
-				&:first-of-type{
-					margin-left:0;
+		justify-content: space-between;
+		.main-navigation{
+			display: flex;
+			align-items:center;
+			#primary-menu{
+				display: none;
+				@include breakpoint(large){
+					display: block;
+				}
+				li{
+					display: inline-block;
+					margin-left:20px;
+					&:first-of-type{
+						margin-left:0;
+					}
 				}
 			}
-		}
-		.flyout-toggle{
-			cursor:pointer;
-			@include font-size(30);
-			@include breakpoint(large){
-				display: none;
+			.flyout-toggle{
+				cursor:pointer;
+				@include font-size(30);
+				@include breakpoint(large){
+					display: none;
+				}
 			}
 		}
 	}

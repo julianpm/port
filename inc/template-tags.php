@@ -122,6 +122,18 @@ add_action( 'edit_category', 'pt_category_transient_flusher' );
 add_action( 'save_post',     'pt_category_transient_flusher' );
 
 
+// GET CATEGORY
+function pt_post_meta(){
+
+	if ('projects' == get_post_type() ){
+		$category = get_the_terms( get_the_ID(), 'project-category' );
+		if ( $category ){
+			echo '<span class="post-meta">'.esc_html( $category[0]->name ).'</span>';
+		}
+	} 
+
+}
+
 /**
  * Display navigation to next/previous post when applicable.
  *
@@ -149,64 +161,67 @@ function pt_post_navigation() {
 // PAGE HEADER
 function pt_page_header(){
 	if ( function_exists( 'get_field' ) ){
-		$primary_hero = get_field( 'pt_primary_hero_image', 'option' );
 		$hero_title = get_field( 'pt_hero_title', 'option' );
 		$hero_subtitle = get_field( 'pt_hero_subtitle', 'option' );
+		$second_hero_image = get_field( 'pt_second_hero_image');
+		$third_hero_image = get_field( 'pt_third_hero_image');
 
-		if ( $primary_hero ){ ?>
+		if ( has_post_thumbnail() ){ ?>
 
 			<header class="page-header">
-				<div class="page-header-inner page-header-large">
-					<img src="<?php echo esc_url( $primary_hero['url'] ); ?>" alt="<?php echo $primary_hero['alt']; ?>">
+				<div class="page-header-large">
+					<?php the_post_thumbnail(); ?>
 					<div class="overlay">
-						<div>
-							<?php if ( is_front_page() ){
-								if ( $hero_title ){ ?>
-									<h1><?php echo esc_html( $hero_title ); ?></h1>
-								<?php }
-								if ( $hero_subtitle ){ ?>
-									<h2><?php echo esc_html( $hero_subtitle ); ?></h2>
-								<?php }
-							} elseif ( is_home() ){ ?>
-								<h1><?php single_post_title(); ?></h1>
-							<?php } else{ ?>
-								<h1><?php the_title(); ?></h1>
-							<?php } ?>
-						</div>
+						<?php if ( $hero_title ){ ?>
+							<h1><?php echo esc_html( $hero_title ); ?></h1>
+						<?php }
+						if ( $hero_subtitle ){ ?>
+							<h2><?php echo esc_html( $hero_subtitle ); ?></h2>
+						<?php } ?>
 					</div>
-				</div>
-	
-				<?php 
-				$second_hero = get_field( 'pt_second_hero_image' );
-				$third_hero = get_field( 'pt_third_hero_image' );
-				$journal_second_hero = get_field( 'pt_journal_second_hero_image', 'option' );
-				$journal_third_hero = get_field( 'pt_journal_third_hero_image', 'option' );
+				</div> <!-- end of page-header-large -->
+				<div class="page-header-small">
+					<?php echo wp_get_attachment_image( $second_hero_image, 'full' ); ?>
+					<?php echo wp_get_attachment_image( $third_hero_image, 'full' ); ?>
+				</div> <!-- end of page-header-small -->
+			</header>
 
-				if ( is_home() ){
-					if ( $journal_second_hero && $journal_third_hero ){ ?>
-						
-						<div class="page-header-inner page-header-small">
-							<img src="<?php echo esc_url( $journal_second_hero['url'] ); ?>" alt="<?php echo $journal_second_hero['alt']; ?>">
-							<img src="<?php echo esc_url( $journal_third_hero['url'] ); ?>" alt="<?php echo $journal_third_hero['alt']; ?>">
-						</div>
+		<?php } else { ?>
 
-					<?php }
-				} else{ 
-					if ( $second_hero && $third_hero ){ ?>
-
-						<div class="page-header-inner page-header-small">
-							<img src="<?php echo esc_url( $second_hero['url'] ); ?>" alt="<?php echo $second_hero['alt']; ?>">
-							<img src="<?php echo esc_url( $third_hero['url'] ); ?>" alt="<?php echo $third_hero['alt']; ?>">
-						</div>
-
-					<?php }
-				} ?>
-
+			<header class="page-header-simple">
+				<h1><?php the_title(); ?></h1>
 			</header>
 
 		<?php }
 
 	}
+}
+
+
+// POST HEADER
+function pt_post_header(){
+	if ( function_exists( 'get_field' ) ){ ?>
+
+		<header class="page-header-simple">
+			
+			<?php if ( is_home() ){ ?>
+
+				<h1><?php single_post_title(); ?></h1>
+			
+			<?php } else { ?>
+
+				<h1>
+					<?php
+						the_archive_title( '<h1 class="page-title">', '</h1>' );
+						the_archive_description( '<div class="archive-description">', '</div>' );
+					?>
+				</h1>
+
+			<?php } ?>
+
+		</header>
+
+	<?php }
 }
 
 
@@ -247,18 +262,18 @@ function pt_social_media(){
 function pt_about_me(){
 	if ( function_exists( 'get_field' ) ){
 
-		if ( has_post_thumbnail() ){ ?>
+		#if ( has_post_thumbnail() ){ ?>
 	
-			<section class="about-info">
-				<div class="about-info_image">
-					<?php the_post_thumbnail(); ?>
-				</div>
-				<div class="about-info_text">
-					<?php the_content(); ?>
-				</div>
-			</section>
+			<!-- <section class="about-info"> -->
+				<!-- <div class="about-info_image"> -->
+					<?php #the_post_thumbnail(); ?>
+				<!-- </div> -->
+				<!-- <div class="about-info_text"> -->
+					<?php #the_content(); ?>
+				<!-- </div> -->
+			<!-- </section> -->
 		
-		<?php }
+		<?php #}
 	}
 }
 

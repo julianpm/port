@@ -144,10 +144,39 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+/**
+ * Custom post types.
+ */
+require get_template_directory() . '/inc/posttypes.php';
+
+/**
+ * Load taxonomies.
+ */
+require_once( get_template_directory() . '/inc/taxonomies.php' );
+
 
 // OPTIONS PAGE
 if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page('Theme Options');
-	acf_add_options_page('Page Header Options');
+	acf_add_options_page('Page Header Title Options');
 	acf_add_options_page('Social Media Options');
 }
+
+// REMOVE "ARCHIVES" FROM CUSTOM POST ARCHIVE PAGE
+function my_theme_archive_title( $title ) {
+    if ( is_category() ) {
+        $title = single_cat_title( '', false );
+    } elseif ( is_tag() ) {
+        $title = single_tag_title( '', false );
+    } elseif ( is_author() ) {
+        $title = '<span class="vcard">' . get_the_author() . '</span>';
+    } elseif ( is_post_type_archive() ) {
+        $title = post_type_archive_title( '', false );
+    } elseif ( is_tax() ) {
+        $title = single_term_title( '', false );
+    }
+  
+    return $title;
+}
+ 
+add_filter( 'get_the_archive_title', 'my_theme_archive_title' );

@@ -23,10 +23,10 @@
 				else :
 					the_title( '<h2 class="entry-title">', '</h2>' );
 				endif; ?>
-				<?php pso_post_meta(); ?>
+				<?php pt_post_meta(); ?>
 			</header>
 		</a>
-		
+
 	<?php } ?>
 
 </article><!-- #post-## -->

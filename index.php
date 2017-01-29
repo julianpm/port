@@ -17,7 +17,7 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<?php pt_page_header(); ?>
+			<?php pt_post_header(); ?>
 
 			<section class="section-padding">
 				<div class="row" id="post-list">
@@ -37,8 +37,6 @@ get_header(); ?>
 
 				</div>
 			</section>
-
-			<?php #the_posts_navigation(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

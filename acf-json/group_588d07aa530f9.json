@@ -1,9 +1,9 @@
 {
-    "key": "group_587d88411d59d",
-    "title": "Front Page Options",
+    "key": "group_588d07aa530f9",
+    "title": "Page Header Image Options",
     "fields": [
         {
-            "return_format": "array",
+            "return_format": "id",
             "preview_size": "thumbnail",
             "library": "all",
             "min_width": "",
@@ -13,7 +13,7 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "key": "field_587d884853a16",
+            "key": "field_588d07c6ca12a",
             "label": "Second Hero Image",
             "name": "pt_second_hero_image",
             "type": "image",
@@ -27,7 +27,7 @@
             }
         },
         {
-            "return_format": "array",
+            "return_format": "id",
             "preview_size": "thumbnail",
             "library": "all",
             "min_width": "",
@@ -37,7 +37,7 @@
             "max_height": "",
             "max_size": "",
             "mime_types": "",
-            "key": "field_587d885353a17",
+            "key": "field_588d07e1ca12b",
             "label": "Third Hero Image",
             "name": "pt_third_hero_image",
             "type": "image",
@@ -54,6 +54,20 @@
     "location": [
         [
             {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/about.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "templates\/contact.php"
+            }
+        ],
+        [
+            {
                 "param": "page_type",
                 "operator": "==",
                 "value": "front_page"
@@ -68,5 +82,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1484621924
+    "modified": 1485637611
 }

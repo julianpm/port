@@ -1,31 +1,7 @@
 {
     "key": "group_587d8a625c9ec",
-    "title": "Page Header Options",
+    "title": "Page Header Title Options",
     "fields": [
-        {
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "key": "field_587d8a6fdffc6",
-            "label": "Primary Hero Image",
-            "name": "pt_primary_hero_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
         {
             "default_value": "",
             "maxlength": "",
@@ -63,54 +39,6 @@
                 "class": "",
                 "id": ""
             }
-        },
-        {
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "key": "field_5882d7fa7f26e",
-            "label": "Journal Second Hero Image",
-            "name": "pt_journal_second_hero_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
-        },
-        {
-            "return_format": "array",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "key": "field_5882d8177f26f",
-            "label": "Journal Third Hero Image",
-            "name": "pt_journal_third_hero_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            }
         }
     ],
     "location": [
@@ -118,7 +46,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "acf-options-page-header-options"
+                "value": "acf-options-theme-options"
             }
         ]
     ],
@@ -130,5 +58,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1484971129
+    "modified": 1485637534
 }

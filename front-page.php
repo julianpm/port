@@ -20,9 +20,34 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 			
-				pt_page_header();
+				pt_page_header(); ?>
 
-			endwhile; // End of the loop.
+				<section class="section-padding work-projects">
+
+					<?php
+					$args = array(
+						'post_type' 	 => 'projects',
+						'posts_per_page' => '8'
+					);
+
+					// the query
+					$projects = new WP_Query( $args );
+
+					if ( $projects->have_posts() ) :
+
+						while ( $projects->have_posts() ) : $projects->the_post();
+				
+							get_template_part( 'template-parts/content', 'projects' );
+
+						endwhile;
+
+						wp_reset_postdata();
+
+					endif; ?>
+
+				</section>
+
+			<?php endwhile; // End of the loop.
 			?>
 
 		</main><!-- #main -->

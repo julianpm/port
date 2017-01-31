@@ -1,4 +1,4 @@
-// BLOG POST ARCHIVE
+// BLOG ARCHIVE
 .blog{
 	#post-list{
 		display: flex;
@@ -6,8 +6,12 @@
 	}
 }
 
-.post{
+// POST TITLES
+.post, .projects{
 	margin-bottom:30px;
+	.home &{
+		margin-bottom: 0;
+	}
 	.entry-title{
 		margin-top:20px;
 		@include font-size(20);
@@ -17,9 +21,9 @@
 	}
 }
 
-// BLOG POST SINGLE
-.single-post{
-	.post{
+// BLOG/PROJECT POST SINGLE
+.single-post, .single-projects{
+	.post, .projects{
 		width:90%; 
 		margin: 0 auto;
 		@include breakpoint(large){
@@ -40,10 +44,12 @@
 		display: flex;
 	}
 	.projects{
-		@include breakpoint(large){
-			width: 25%;
-		}
 		position:relative;
+		.home &{
+			@include breakpoint(large){
+				width: 25%;
+			}
+		}
 		a{
 			position:absolute;
 			top:0;

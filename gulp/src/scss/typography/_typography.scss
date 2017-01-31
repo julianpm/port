@@ -6,17 +6,21 @@ body *{
 h1, h2, h3{
 	margin:0;
 }
+h1, h2{
+	color: white;
+	.single-post &, .single-projects &{
+		color: black;
+	}
+}
 h1{
 	@include font-size(48);
 	letter-spacing:3px;
-	color:white;
 	@include breakpoint(large){
 		@include font-size(72);
 	}
 }
 h2{
 	@include font-size(28);
-	color:white;
 	@include breakpoint(large){
 		@include font-size(48);
 	}
@@ -31,6 +35,9 @@ p{
 	@include font-size(16);
 	footer &{
 		@include font-size(14);
+	}
+	.error404 &{
+		text-align: center;
 	}
 }
 a{

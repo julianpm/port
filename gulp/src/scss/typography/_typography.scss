@@ -14,7 +14,7 @@ h1, h2{
 }
 h1{
 	@include font-size(48);
-	letter-spacing:3px;
+	letter-spacing:1.5px;
 	@include breakpoint(large){
 		@include font-size(72);
 	}

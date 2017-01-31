@@ -43,8 +43,8 @@
 	position: fixed;
 	width: 100%;
 	z-index:1;
-	height:190px;
-	top:-190px;
+	height:230px;
+	top:-230px;
 	@include breakpoint(large){
 		display: none !important;
 	}

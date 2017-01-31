@@ -17,7 +17,7 @@ get_header(); ?>
 
 			pt_post_header(); ?>
 			
-			<section class="row section-padding">
+			<section class="row section-padding work-projects">
 				
 				<?php
 				/* Start the Loop */

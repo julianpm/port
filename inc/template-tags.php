@@ -261,19 +261,20 @@ function pt_social_media(){
 // ABOUT PAGE ABOUT ME
 function pt_about_me(){
 	if ( function_exists( 'get_field' ) ){
+		$my_services_info_image = get_field( 'pt_my_services_info_image' );
 
-		#if ( has_post_thumbnail() ){ ?>
+		if ( $my_services_info_image ){ ?>
 	
-			<!-- <section class="about-info"> -->
-				<!-- <div class="about-info_image"> -->
-					<?php #the_post_thumbnail(); ?>
-				<!-- </div> -->
-				<!-- <div class="about-info_text"> -->
-					<?php #the_content(); ?>
-				<!-- </div> -->
-			<!-- </section> -->
+			<section class="about-info">
+				<div class="about-info_image">
+					<?php echo wp_get_attachment_image( $my_services_info_image, 'full' ); ?>
+				</div>
+				<div class="about-info_text">
+					<?php the_content(); ?>
+				</div>
+			</section>
 		
-		<?php #}
+		<?php }
 	}
 }
 

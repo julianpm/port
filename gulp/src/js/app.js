@@ -9,7 +9,7 @@ jQuery(document).ready(function($){
 
 	$('.flyout-toggle-close').click(function(){
 		$('.flyout').animate({
-			top:-190
+			top:-230
 		}, 200, function(){
 		});
 	});

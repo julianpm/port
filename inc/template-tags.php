@@ -14,7 +14,7 @@ if ( ! function_exists( 'pt_posted_on' ) ) :
 function pt_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	}
 
 	$time_string = sprintf( $time_string,
@@ -25,16 +25,16 @@ function pt_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		esc_html_x( 'Posted on %s', 'post date', 'pt' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
+		esc_html_x( 'Published on: %s', 'post date', 'pt' ),
+		'<span' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</span>'
 	);
 
-	$byline = sprintf(
-		esc_html_x( 'by %s', 'post author', 'pt' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
+	// $byline = sprintf(
+	// 	esc_html_x( 'by %s', 'post author', 'pt' ),
+	// 	'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+	// );
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+	echo '<p class="posted-on">' . $posted_on . '</p>'; // WPCS: XSS OK.
 
 }
 endif;
@@ -126,10 +126,13 @@ add_action( 'save_post',     'pt_category_transient_flusher' );
 function pt_post_meta(){
 
 	if ('projects' == get_post_type() ){
-		$category = get_the_terms( get_the_ID(), 'project-category' );
-		if ( $category ){
-			echo '<span class="post-meta">'.esc_html( $category[0]->name ).'</span>';
+		
+		$pt_category = get_the_terms( get_the_ID(), 'project-category' );
+		
+		if ( $pt_category ){
+			echo '<span class="post-meta">'.esc_html( $pt_category[0]->name ).'</span>';
 		}
+
 	} 
 
 }
@@ -222,6 +225,20 @@ function pt_post_header(){
 		</header>
 
 	<?php }
+}
+
+
+// SINGLE PROJECT CLIENT NAME
+function pt_client_name(){
+	if ( function_exists( 'get_field' ) ){
+		$client = get_field( 'pt_client_name' );
+
+		if ( $client ){ ?>
+
+			<p><?php echo esc_html_e( 'Client: ', 'pt' ) . ( $client ); ?></p>
+
+		<?php }
+	}
 }
 
 

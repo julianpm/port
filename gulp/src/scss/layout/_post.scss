@@ -4,6 +4,11 @@
 		display: flex;
 		flex-wrap:wrap;
 	}
+	.entry-content{
+		p{
+			margin:0;
+		}
+	}
 }
 
 // POST TITLES
@@ -13,7 +18,16 @@
 		margin-bottom: 0;
 	}
 	.entry-title{
-		margin-top:20px;
+		margin:10px 0;
+		.single-post &, .single-projects &{
+			margin:20px 0;
+		}
+		a{
+			color:#222;
+		}
+		.single-projects &{
+			margin:0 0 20px 0;
+		}
 		@include font-size(20);
 		@include breakpoint(large){
 			@include font-size(24);
@@ -33,6 +47,18 @@
 			position: relative;
 			.entry-title{
 				text-align: center;
+			}
+		}
+		.entry-content{
+			text-align: center;
+			.entry-content-inner{
+				margin:20px 0;
+				p{
+					margin:0 0 5px 0;
+					&:last-of-type{
+						margin-bottom:0;
+					}
+				}
 			}
 		}
 	}
@@ -82,6 +108,9 @@
 .post-navigation{
 	position:absolute;
 	width: 100%;
+	.single-projects &{
+		margin-bottom:20px;
+	}
 	.nav-links{
 		div{
 			display: inline-block;
@@ -107,11 +136,11 @@
 	span{
 		background: white;
 		color:black;
-		border:2px solid black;
+		border:2px solid #222;
 		padding:10px 30px;
 		transition:0.5s;
 		&:hover{
-			background: black;
+			background: #222;
 			color:white;
 		}
 	}

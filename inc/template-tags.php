@@ -228,20 +228,6 @@ function pt_post_header(){
 }
 
 
-// SINGLE PROJECT CLIENT NAME
-function pt_client_name(){
-	if ( function_exists( 'get_field' ) ){
-		$client = get_field( 'pt_client_name' );
-
-		if ( $client ){ ?>
-
-			<p><?php echo esc_html_e( 'Client: ', 'pt' ) . ( $client ); ?></p>
-
-		<?php }
-	}
-}
-
-
 // SOCIAL MEDIA
 function pt_social_media(){
 	if ( function_exists( 'get_field' ) ){

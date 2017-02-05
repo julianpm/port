@@ -18,12 +18,9 @@
 		<a href="<?php echo esc_url( get_permalink() ); ?>">
 			<header>
 				<?php
-				if ( is_single() ) :
-					the_title( '<h1 class="entry-title">', '</h1>' );
-				else :
-					the_title( '<h2 class="entry-title">', '</h2>' );
-				endif; ?>
-				<?php pt_post_meta(); ?>
+					the_title( '<p class="entry-title">', '</p>' );
+					pt_post_meta();
+				?>
 			</header>
 		</a>
 

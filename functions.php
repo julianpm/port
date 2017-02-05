@@ -162,6 +162,7 @@ if( function_exists('acf_add_options_page') ) {
 	acf_add_options_page('Social Media Options');
 }
 
+
 // REMOVE "ARCHIVES" FROM CUSTOM POST ARCHIVE PAGE
 function my_theme_archive_title( $title ) {
     if ( is_category() ) {

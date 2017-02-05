@@ -1,0 +1,9 @@
+.work-projects{
+	@include breakpoint(large){
+		display: flex;
+		flex-wrap:wrap;
+	}
+	.projects{
+		width: 25%;
+	}	
+}

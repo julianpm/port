@@ -27,7 +27,8 @@ get_header(); ?>
 					<?php
 					$args = array(
 						'post_type' 	 => 'projects',
-						'posts_per_page' => '8'
+						'posts_per_page' => '4',
+						'orderby'		 => 'rand'
 					);
 
 					// the query

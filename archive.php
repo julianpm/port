@@ -17,26 +17,26 @@ get_header(); ?>
 
 			pt_post_header(); ?>
 			
-			<section class="row section-padding work-projects">
+			<section class="section-padding">
+				<div class="row" id="post-list">
 				
-				<?php
-				/* Start the Loop */
-				while ( have_posts() ) : the_post(); ?>
+					<?php
+					/* Start the Loop */
+					while ( have_posts() ) : the_post(); ?>
 
-					<div class="columns small-12 large-4">
-						
-						<?php get_template_part( 'template-parts/content', 'projects' ); ?>
-						
-					</div>
+						<div class="columns small-12 large-4">
+							
+							<?php get_template_part( 'template-parts/content', 'projects' ); ?>
+							
+						</div>
 
-				<?php
-				endwhile; ?>
-			
+					<?php
+					endwhile; ?>
+					
+				</div>
 			</section>
-
-
-			<?php the_posts_navigation();
-
+		
+		<?php
 		endif; ?>
 
 		</main><!-- #main -->

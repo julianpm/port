@@ -1,9 +1,13 @@
-.work-projects{
-	@include breakpoint(large){
-		display: flex;
-		flex-wrap:wrap;
+.work-projects-wrapper{
+	text-align: center;
+	.work-projects{
+		margin:30px 0 40px 0;
+		@include breakpoint(large){
+			display: flex;
+			flex-wrap:wrap;
+		}
+		.projects{
+			width: 25%;
+		}	
 	}
-	.projects{
-		width: 25%;
-	}	
 }

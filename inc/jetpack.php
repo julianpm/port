@@ -37,6 +37,8 @@ function pt_infinite_scroll_render() {
 			<?php
 			if ( is_search() ){
 				get_template_part( 'template-parts/content', 'search' );
+			} elseif ( is_archive( 'projects' ) ) {
+				get_template_part( 'template-parts/content', 'projects' );
 			} else {
 				get_template_part( 'template-parts/content', get_post_format() );
 			} ?>

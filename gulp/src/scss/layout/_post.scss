@@ -11,59 +11,6 @@
 	}
 }
 
-// POST TITLES
-.post, .projects{
-	margin-bottom:30px;
-	.home &{
-		margin-bottom: 0;
-	}
-	.entry-title{
-		margin:10px 0;
-		.single-post &, .single-projects &{
-			margin:20px 0;
-		}
-		a{
-			color:#222;
-		}
-		.single-projects &{
-			margin:0 0 20px 0;
-		}
-		@include font-size(20);
-		@include breakpoint(large){
-			@include font-size(24);
-		}
-	}
-}
-
-// BLOG/PROJECT POST SINGLE
-.single-post, .single-projects{
-	.post, .projects{
-		width:90%; 
-		margin: 0 auto;
-		@include breakpoint(large){
-			width: 60%;
-		}
-		.entry-header{
-			position: relative;
-			.entry-title{
-				text-align: center;
-			}
-		}
-		.entry-content{
-			text-align: center;
-			.entry-content-inner{
-				margin:20px 0;
-				p{
-					margin:0 0 5px 0;
-					&:last-of-type{
-						margin-bottom:0;
-					}
-				}
-			}
-		}
-	}
-}
-
 // PROJECT ARCHIVE
 .post-type-archive-projects, .home{
 	#post-list{
@@ -100,13 +47,55 @@
 	}
 }
 
+//BLOG/PROJECT ARCHIVE
+.post, .projects{
+	margin-bottom:20px;
+	.home &{
+		margin-bottom: 0;
+	}
+	header{
+		.entry-title{
+			color:white;
+			margin:0 0 10px 0;
+			@include font-size(20);
+			.blog &{
+				margin:10px 0;
+			}
+		}
+	}
+}
+
+// BLOG/PROJECT POST SINGLE
+.single-post, .single-projects{
+	.post, .projects{
+		width:90%; 
+		margin: 0 auto;
+		@include breakpoint(large){
+			width: 60%;
+		}
+		.entry-header{
+			position: relative;
+			.entry-title{
+				color:black;
+				text-align: center;
+				margin:0 0 20px 0;
+				@include font-size(20);
+				@include breakpoint(large){
+					@include font-size(24);
+				}
+			}
+		}
+		.entry-content{
+			text-align: center;
+		}
+	}
+}
+
 // SINGLE POST NAVIGATION
 .post-navigation{
 	position:absolute;
 	width: 100%;
-	.single-projects &{
-		margin-bottom:20px;
-	}
+	top:2px;
 	.nav-links{
 		div{
 			display: inline-block;
@@ -129,12 +118,14 @@
 #infinite-handle{
 	width: 100%;
 	text-align: center;
+	margin-top:20px;
 	span{
 		background: white;
 		color:black;
 		border:2px solid #222;
 		padding:10px 30px;
 		transition:0.5s;
+		@include font-size(16);
 		&:hover{
 			background: #222;
 			color:white;

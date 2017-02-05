@@ -1,13 +1,8 @@
-// BLOG AND PROJECT ARCHIVE
-.blog, .post-type-archive-projects{
+// BLOG ARCHIVE
+.blog{
 	#post-list{
 		display: flex;
 		flex-wrap:wrap;
-	}
-}
-
-.blog{
-	#post-list{
 		.entry-content{
 			p{
 				margin:0;
@@ -70,42 +65,36 @@
 }
 
 // PROJECT ARCHIVE
-.work-projects{
-	@include breakpoint(large){
+.post-type-archive-projects, .home{
+	#post-list{
 		display: flex;
 		flex-wrap:wrap;
 	}
-}
-
-.projects{
-	position:relative;
-	.home &{
-		@include breakpoint(large){
-			width: 25%;
-		}
-	}
-	a{
-		position:absolute;
-		top:0;
-		left:0;
-		right:0;
-		bottom:0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
-		transition:0.5s;
-		&:hover{
-			background: rgba(0,0,0,0.5);
-			header{
-				opacity:1;
-			}
-		}
-		header{
-			opacity:0;
+	.projects{
+		position:relative;
+		a{
+			position:absolute;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
 			transition:0.5s;
-			.post-meta{
-				color:white;
+			&:hover{
+				background: rgba(0,0,0,0.5);
+				header{
+					opacity:1;
+				}
+			}
+			header{
+				opacity:0;
+				transition:0.5s;
+				.post-meta{
+					color:white;
+				}
 			}
 		}
 	}

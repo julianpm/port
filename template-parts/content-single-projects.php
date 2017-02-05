@@ -29,18 +29,10 @@
 	} ?>
 	
 	<div class="entry-content">
-		<div class="entry-content-inner">
-			<p><?php echo esc_html_e( 'Project Name: ', 'pt' ) . single_post_title(); ?></p>
-
-			<?php pt_client_name(); ?>
-
-			<p><?php echo esc_html_e( 'Category: ', 'pt' ) . pt_post_meta(); ?></p>
-
-			<?php pt_posted_on(); ?>
-		</div>
-
+		<p><?php echo esc_html_e( 'Project Name: ', 'pt' ) . single_post_title(); ?></p>
+		<p><?php echo esc_html_e( 'Category: ', 'pt' ) . pt_post_meta(); ?></p>
+		<?php pt_posted_on(); ?>
 		<?php the_content(); ?>
-
 	</div><!-- .entry-content -->
 
 </article><!-- #post-## -->

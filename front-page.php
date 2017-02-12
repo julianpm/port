@@ -20,39 +20,39 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) : the_post();
 			
-				pt_page_header(); ?>
+				pt_page_header();
 
-				<section class="section-padding work-projects-wrapper">
-					<h3><?php echo esc_html_e( "Here are some things I've worked on", "pt" ); ?></h3>
-					<div class="work-projects">
+				$args = array(
+					'post_type' 	 => 'projects',
+					'posts_per_page' => '4',
+					'orderby'		 => 'rand'
+				);
 
-						<?php
-						$args = array(
-							'post_type' 	 => 'projects',
-							'posts_per_page' => '4',
-							'orderby'		 => 'rand'
-						);
+				// the query
+				$projects = new WP_Query( $args );
 
-						// the query
-						$projects = new WP_Query( $args );
+				if ( $projects->have_posts() ) : ?>
 
-						if ( $projects->have_posts() ) :
+					<section class="section-padding work-projects-wrapper">
+						<h3><?php echo esc_html_e( "Here are some things I've worked on", "pt" ); ?></h3>
+						<div class="work-projects">
 
-							while ( $projects->have_posts() ) : $projects->the_post();
+							<?php while ( $projects->have_posts() ) : $projects->the_post();
 					
 								get_template_part( 'template-parts/content', 'projects' );
 
 							endwhile;
 
-							wp_reset_postdata();
+							wp_reset_postdata(); ?>
 
-						endif; ?>
+						</div>
+						<a class="btn" href="<?php echo esc_url( home_url( '/projects' ) ); ?>"><?php echo esc_html_e( 'View More', 'pt' ); ?></a>
+					</section>
 
-					</div>
-					<a class="btn" href="<?php echo esc_url( home_url( '/projects' ) ); ?>"><?php echo esc_html_e( 'View More', 'pt' ); ?></a>
-				</section>
-
-			<?php endwhile; // End of the loop.
+				<?php
+				endif;
+				
+			endwhile; // End of the loop.
 			?>
 
 		</main><!-- #main -->

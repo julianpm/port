@@ -57,12 +57,16 @@
 		.entry-title{
 			color:white;
 			margin:0 0 10px 0;
-			@include font-size(20);
+			@include font-size(18);
 			.blog &{
 				margin:10px 0;
 			}
 		}
 	}
+}
+
+.post{
+	margin-bottom:40px;
 }
 
 // BLOG/PROJECT POST SINGLE
@@ -87,6 +91,7 @@
 		}
 		.entry-content{
 			text-align: center;
+			margin-top:40px;
 		}
 	}
 }
@@ -130,5 +135,12 @@
 			background: #222;
 			color:white;
 		}
+	}
+}
+
+.infinite-loader{
+	width: 100%;
+	.spinner{
+		margin: 0 auto;
 	}
 }

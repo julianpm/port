@@ -29,7 +29,7 @@ get_header(); ?>
 					/* Start the Loop */
 					while ( have_posts() ) : the_post(); ?>
 
-						<div class="columns small-12 large-4">
+						<div class="columns small-12 medium-6 large-4">
 						
 							<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
 						

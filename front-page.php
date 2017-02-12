@@ -34,7 +34,11 @@ get_header(); ?>
 				if ( $projects->have_posts() ) : ?>
 
 					<section class="section-padding work-projects-wrapper">
-						<h3><?php echo esc_html_e( "Here are some things I've worked on", "pt" ); ?></h3>
+						<div class="row">
+							<div class="columns small-12">
+								<h3><?php echo esc_html_e( "Here are some things I've worked on", "pt" ); ?></h3>
+							</div>
+						</div>
 						<div class="work-projects">
 
 							<?php while ( $projects->have_posts() ) : $projects->the_post();

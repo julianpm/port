@@ -14,9 +14,11 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<?php pt_social_media(); ?>
-			<p><?php echo esc_html_e( 'Copyright © PORT - 2017. All Rights Reserved By Julian Meanchoff.', 'pt' ); ?></p>
+		<div class="site-info row">
+			<div class="columns small-12">
+				<?php pt_social_media(); ?>
+				<p>© PORT - <?php echo date( 'Y' ); ?><?php echo esc_html_e( '. All Rights Reserved. By Julian Meanchoff.' ); ?></p>
+			</div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

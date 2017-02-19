@@ -1,8 +1,6 @@
 // BLOG ARCHIVE
 .blog{
 	#post-list{
-		display: flex;
-		flex-wrap:wrap;
 		.entry-content{
 			p{
 				margin:0;
@@ -13,10 +11,6 @@
 
 // PROJECT ARCHIVE
 .post-type-archive-projects, .home{
-	#post-list{
-		display: flex;
-		flex-wrap:wrap;
-	}
 	.projects{
 		position:relative;
 		a{
@@ -121,9 +115,10 @@
 
 // JETPACK
 #infinite-handle{
-	width: 100%;
 	text-align: center;
-	margin-top:20px;
+	margin:20px auto 0 auto;
+	clear:both;
+	width: 150px;
 	span{
 		background: white;
 		color:black;

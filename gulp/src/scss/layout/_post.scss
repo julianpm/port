@@ -76,16 +76,29 @@
 			.entry-title{
 				color:black;
 				text-align: center;
-				margin:0 0 20px 0;
+				margin:0 auto 20px auto;
+				width: 90%;
 				@include font-size(20);
 				@include breakpoint(large){
 					@include font-size(24);
+					width: 100%;
 				}
 			}
 		}
-		.entry-content{
+		.entry-content, .entry-content-info{
 			text-align: center;
-			margin-top:40px;
+		}
+		.entry-content-info{
+			margin-top:20px;
+			p{
+				margin:0 0 5px 0;
+				&:last-of-type{
+					margin-bottom:0;
+				}
+			}
+			p, span, time{
+				font-weight: bold !important;
+			}
 		}
 	}
 }
